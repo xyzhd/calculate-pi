@@ -16,7 +16,7 @@ public class Pi {
 
 	public static void main(String[] args) {
 
-		int n = 10000000;
+		int n = 20;
 		double piValue = calculatePi(n);
 		printResult(piValue);
 	} 
