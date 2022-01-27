@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
@@ -16,9 +17,12 @@ public class Pi {
 
 	public static void main(String[] args) {
 
-		int n = 20;
+		int n = 100;
 		double piValue = calculatePi(n);
 		printResult(piValue);
+		BigDecimal d = new BigDecimal(1); 
+		d = d.divide(new BigDecimal(3),5000,BigDecimal.ROUND_HALF_UP);
+		System.out.println(d); 
 	} 
 
 	private static double calculatePi(double n) {
@@ -48,14 +52,13 @@ public class Pi {
 		return n;
 	}
 
-	private static double calculateError(double piValue) {
-		return Math.abs(1 - piValue / Math.PI) * 100;
-	}
+	
+	
 
 	private static void printResult(double piValue) {
 		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println("The value of pi is approximately " + piValue + ".");
-		System.out.println("The calculated value is off by approximately " + df.format(calculateError(piValue)) + "%.");
+		
 	}
 
 } 
